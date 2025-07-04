@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Drive personale</title>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+	<div id="content">
+		
+		<h1>Carica dei file</h1>
+
+		<input id="input_file" type="file" multiple="multiple">
+
+		<p id="error"></p>
+
+		<h1>Scarica dei file (clicca sui nomi dell'elenco)</h1>
+
+		<div id="file_mode">
+
+			<input type="checkbox" id="uninstall" name="option">
+			<label for="option">Disinstalla</label>
+		
+		</div>
+
+		<ul id="list"></ul>
+	</div>
+
+	<script src="socket.io/socket.io.js"></script>
+	<script src="index.js"></script>
+
+</body>
+
+</html>

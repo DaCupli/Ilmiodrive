@@ -1,0 +1,141 @@
+body {
+
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+}
+
+@media (min-width: 800px) {
+
+	#content { 
+		
+		position: fixed;
+		overflow: scroll;
+		width: 60%;
+		height: 100%;
+		left: 20%;
+		background-color: rgb(255, 255, 68);
+		opacity: 0.5;
+	}
+
+	#input_file {
+
+		display: block;
+		position: relative;
+		width: 60%;
+		margin: auto;
+		margin-top: 10%;
+		font-size: 200%;
+	}
+
+	#error {
+
+		display: none;
+		position: relative;
+		width: 90%;
+		margin: auto;
+		margin-top: 10%;
+		font-size: 120%;
+		text-align: center;
+	}
+
+	h1 {
+
+		display: block;
+		position: relative;
+		width: 50%;
+		margin: auto;
+		margin-top: 5%;
+		text-align: center;
+	}
+
+	li {
+
+		display: block;
+		position: relative;
+		width: 50%;
+		left: 10%;
+		margin-top: 2%;
+		font-size: 120%;
+
+	}
+
+	#file_mode {
+
+		display: block;
+		position: relative;
+		margin: auto;
+		margin-top: 5%;
+		width: 50%;
+		font-size: 150%;
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	#content { 
+		
+		position: fixed;
+		overflow: scroll;
+		width: 80%;
+		height: 100%;
+		left: 10%;
+		background-color: rgb(255, 255, 68);
+		opacity: 0.5;
+	}
+
+	#input_file {
+
+		display: block;
+		position: relative;
+		width: 90%;
+		margin: auto;
+		margin-top: 20%;
+	}
+
+	#error {
+
+		display: none;
+		position: relative;
+		width: 90%;
+		margin: auto;
+		margin-top: 10%;
+		font-size: 150%;
+		text-align: center;
+	}
+
+	h1 {
+
+		display: block;
+		position: relative;
+		width: 50%;
+		margin: auto;
+		margin-top: 5%;
+		text-align: center;
+	}
+
+	li {
+
+		display: block;
+		position: relative;
+		width: 50%;
+		left: 10%;
+		margin-top: 2%;
+		font-size: 150%;
+
+	}
+
+	#file_mode {
+
+		display: block;
+		position: relative;
+		margin: auto;
+		margin-top: 5%;
+		width: 50%;
+		font-size: 180%;
+		text-align: center;
+	}
+
+}
