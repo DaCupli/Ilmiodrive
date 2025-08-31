@@ -11,16 +11,22 @@ const selected_color = 'Tomato';
 
 const message_time = 2000;
 
-let socket = io();
+const socket = io();
 
-let input = document.getElementById('input_file');
-let err_message = document.getElementById('error');
+const password = document.getElementById('password');
+const input = document.getElementById('input_file');
+const err_message = document.getElementById('error');
+const uninstall = document.getElementById('uninstall');
+const folder_name = document.getElementById('folder_name');
+const button_folder = document.getElementById('button_folder');
+const button_path = document.getElementById('button_path');
+const button_delete = document.getElementById('button_delete');
 
 let list = document.getElementById('list');
 
 let delete_mode = false;
 
-let uninstall = document.getElementById('uninstall');
+let path = '';
 
 uninstall.addEventListener('click', () => {
 
@@ -38,7 +44,7 @@ input.addEventListener('change', (event) => {
 		names.push(files[i].name);
 	}
 
-	socket.timeout(5000).emit('upload files', names, files, (err, response) => {
+	socket.timeout(5000).emit('upload files', path, names, files, password.value, (err, response) => {
 		
 		if (err || response.status == 'err') {
 
@@ -64,6 +70,25 @@ input.addEventListener('change', (event) => {
 	});
 });
 
+button_folder.addEventListener('click', () => {
+
+	socket.emit('make directory', path, folder_name.value, password.value);
+	folder_name.value = '';
+});
+
+button_path.addEventListener('click', () => {
+
+	if (folder_name.value != '')
+		socket.emit('refresh', path + folder_name.value + '/');
+		folder_name.value = '';
+});
+
+button_delete.addEventListener('click', () => {
+
+	socket.emit('delete directory', path, folder_name.value, password.value);
+	location.reload();
+});
+
 socket.on('download file', (file_name, file) => {
 
 	let blob = new Blob([file]);
@@ -81,7 +106,10 @@ socket.on('download file', (file_name, file) => {
 	document.body.removeChild(a);
 }); 
 
-socket.on('reload list', (file_list) => {
+socket.on('reload list', (p, file_list) => {
+
+	path = p;
+	console.log(path);
 
 	list.innerHTML = '';
 
@@ -107,7 +135,7 @@ socket.on('reload list', (file_list) => {
 
 			event.target.style.color = selected_color;
 			
-			socket.timeout(5000).emit('ask for file', file_list[i], delete_mode);
+			socket.timeout(5000).emit('ask for file', path, file_list[i], delete_mode, password.value);
 
 			setTimeout(() => {
 

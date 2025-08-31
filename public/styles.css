@@ -18,7 +18,7 @@ body {
 		opacity: 0.5;
 	}
 
-	#input_file {
+	#input_file, #password {
 
 		display: block;
 		position: relative;
@@ -39,7 +39,7 @@ body {
 		text-align: center;
 	}
 
-	h1 {
+	h1, button, input {
 
 		display: block;
 		position: relative;
@@ -86,7 +86,7 @@ body {
 		opacity: 0.5;
 	}
 
-	#input_file {
+	#input_file, #password {
 
 		display: block;
 		position: relative;
@@ -106,7 +106,7 @@ body {
 		text-align: center;
 	}
 
-	h1 {
+	h1, button, input {
 
 		display: block;
 		position: relative;
@@ -137,5 +137,4 @@ body {
 		font-size: 180%;
 		text-align: center;
 	}
-
 }
