@@ -17,7 +17,7 @@ const io = new Server(server, {
 	maxHttpBufferSize: 1e7
 });
 
-const password = 'Davide2010!';
+const password = 'password'; // here you can insert the password to access your cloud.
 const port = 50002;
 
 app.use(express.static(__dirname + '/public'));
@@ -118,3 +118,4 @@ server.listen(port, () => {
 
 	console.log('Go to localhost:' + (port));
 });
+
