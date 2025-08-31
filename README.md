@@ -1,5 +1,5 @@
 # Ilmiodrive
-This is a sort of cloud where you can send all your files to the server, download them and delete them.
+This is a sort of cloud where you can send all your files to the server, download them and delete them. It is only a didactic project, as it lacks of some protection features.
 
 INSTRUCTIONS
 
